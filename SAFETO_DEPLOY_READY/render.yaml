@@ -2,7 +2,7 @@ services:
   - type: web
     name: safeto-api
     runtime: node
-    rootDir: backend
+    rootDir: SAFETO_DEPLOY_READY/backend
     buildCommand: npm install
     startCommand: npm start
     healthCheckPath: /health
@@ -20,9 +20,10 @@ services:
       name: safeto-data
       mountPath: /var/data
       sizeGB: 1
+
   - type: web
     name: safeto-web
     runtime: static
-    rootDir: frontend
+    rootDir: SAFETO_DEPLOY_READY/frontend
     buildCommand: ""
     staticPublishPath: .
